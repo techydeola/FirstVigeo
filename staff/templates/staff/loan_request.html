@@ -1,0 +1,24 @@
+{% extends "staff/base.html" %}
+
+{% block title %}
+    loan request
+{% endblock %}
+
+{% block content %}
+    <header>
+        {% if request.user.is_authenticated %}
+            <span>Hi, {{ request.user.username | title }}</span>
+            <a href="{% url "logout" %}">Logout</a>
+        {% else %}
+            <a href="{% url "logout" %}">Login</a>
+        {% endif %}
+    </header>
+
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ request_form }}
+            <button>Submit</button>
+        </form>
+    </div>
+{% endblock %}
