@@ -1,17 +1,59 @@
-{% extends "staff/base.html" %}
+{% load static %}
 
-{% block title %}
-    loan page
-{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'staff/loan-page.css' %}">
+    {% block css_files %}
+    {% endblock %}
+    <title>Loan Page</title>
+</head>
+<body>
     <header>
         {% if request.user.is_authenticated %}
             <span>Hi, {{ request.user.username | title }}</span>
             <a href="{% url "logout" %}">Logout</a>
         {% else %}
-            <a href="{% url "logout" %}">Login</a>
+            <a href="{% url "login" %}">Login</a>
         {% endif %}
     </header>
-    <p>Want a new loan? click <a href="{% url 'request' %}">here</a></p>
-{% endblock %}
+    <div class="container">
+        <table>
+            <caption>Loan History (in Naira)</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Loan amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for loan in loans %}
+                    <tr>
+                        <td>{{ loan.loan_amount }}</td>
+                        <td>{{ loan.date }}</td>
+                        <td>{{ loan.status }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">Total Approved Loan:</th>
+                    <td>{{ total_app }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Total Paid Amount:</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Due Amount:</th>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <p class="loan-request">Want a new loan? click <a href="{% url 'request' %}">here</a></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+main {
+    margin-top: 50px;
+    padding: 50px 0;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 100px;
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em; /* Adjust font size if needed */
+}
+
+footer .container {
+    text-align: center;
+}

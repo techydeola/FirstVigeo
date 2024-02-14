@@ -1,51 +1,112 @@
-body {
-    font-family: sans-serif;
+/* base.css */
+
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 header {
-    background-color: #f1f1f1;
+    background-color: #333;
+    color: #fff;
     padding: 20px 0;
 }
 
-nav {
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Change to your preferred hover color */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
-    list-style: none;
+/* Example of additional styling you can apply */
+.container h1 {
     margin: 0;
-    padding: 0;
 }
 
-nav li {
-    display: inline-block;
-    margin-right: 20px;
+.container nav {
+    flex: 1;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
+.container nav ul {
+    text-align: right;
 }
 
-nav a:hover {
-    color: #007bff;
+.container nav ul li:last-child {
+    margin-right: 0;
 }
 
-.logo {
-    text-align: center;
+.container nav ul li a {
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.logo h1 {
-    font-size: 2em;
-    margin: 0;
+.container nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Adjust styles as needed for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container nav {
+        margin-top: 20px;
+    }
+
+    .container nav ul {
+        text-align: center;
+    }
+
+    .container nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }

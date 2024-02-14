@@ -15,17 +15,18 @@
 <body>
     <header>
         <div class="container">
+            <div class="logo">
+                <img src="{% static 'images/fvs.png' %}" alt="Company Logo">
+                <h1>First Vigeo Investment</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Supermarket</a></li>
-                    <li><a href="#">Staff</a></li>
+                    <li><a href="{% url 'login' %}">Staff</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="logo">
-                <h1>First Vigeo Investment</h1>
-            </div>
         </div>
     </header>
     {% block content %}

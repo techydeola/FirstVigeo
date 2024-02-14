@@ -1,13 +1,21 @@
-{% extends "staff/base.html" %}
+{% load static %}
 
-{% block title %}
-    Login
-{% endblock %}
-
-{% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button>login</button>
-    </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'staff/login.css' %}"> <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <img src="{% static 'images/fvs.png' %}" alt="Company logo" class="logo">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Login</button>
+        </form>
+        <a href="#">Forgot password?</a>
+    </div>
+</body>
+</html>

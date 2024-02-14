@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, RequestForm
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .models import Loan, Staff
+from .models import Loan
 
 # Create your views here.
 
@@ -33,17 +34,24 @@ def login_page(request):
 
 
 @login_required(login_url='login')
-def index(request):
-    return render(request, 'staff/loan-page.html')
+def loan_page(request):
+    user_id = request.user.pk
+    loans = Loan.objects.filter(user_id=user_id)
+    approved_loan = loans.filter(status=2) #querying for all approved loans
+    total_app = 0
+    for loan in approved_loan:
+        total_app += loan.loan_amount
+    return render(request, 'staff/loan-page.html', {"loans": loans, "total_app": total_app})
 
 @login_required(login_url='login')
 def sign_out(request):
     logout(request)
+    del request.session
     messages.success(request, f'You have been logged out')
-    return HttpResponseRedirect('login')
+    return redirect(reverse('login'))
 
 
-@login_required
+@login_required(login_url='login')
 def loan_request(request):
     if request.method == 'GET':
         form = RequestForm()
@@ -51,8 +59,12 @@ def loan_request(request):
     
     if request.method == 'POST':
         user_instance = request.user
-        # user = Staff.objects.get(pk=user_id)
         loan_amount = request.POST['loan_amount']
-        loan_instance = Loan.objects.create(user_id=user_instance, loan_amount=loan_amount)
+        Loan.objects.create(user_id=user_instance, loan_amount=loan_amount)
         messages.success(request, f'Your Loan has been submitted')
-        return HttpResponseRedirect('loan-page')
+        return redirect(reverse('loan-page') + '?request_submitted=True')
+
+
+
+def index(request):
+    return render(request, 'staff/index.html')
