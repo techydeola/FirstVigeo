@@ -3,6 +3,8 @@
 
 <p>The FVS web loan application is a web application for a company that allows the staff to easily make loan request and view thier loan history. This application is developed to simplify loan application and management for FirstVigeo Supermarket.
 
+![Loan page image sample](https://i.ibb.co/xX1vq1p/fvs-preview.jpg)
+
 ## Table of Content
 
 - [About](#about)
@@ -48,9 +50,6 @@
 2. Click on Staff in the navigation bar
 3. Login
 4. Request for a new loan
-
-
-![Loan page image sample](https://i.ibb.co/xX1vq1p/fvs-preview.jpg)
 
 
 ### Collaboration
