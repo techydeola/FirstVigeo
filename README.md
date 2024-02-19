@@ -50,7 +50,7 @@
 4. Request for a new loan
 
 
-![Loan page image sample](https://drive.google.com/file/d/1vo1b2aN-yy0AfvfXfvDCvKuuqEzgaJOL/view?usp=share_link)
+![Loan page image sample](https://i.ibb.co/xX1vq1p/fvs-preview.jpg)
 
 
 ### Collaboration
