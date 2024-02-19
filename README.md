@@ -1,4 +1,4 @@
-## FVS Web Loan Project
+## FVS Web Loan Application
 
 
 <p>The FVS web loan application is a web application for a company that allows the staff to easily make loan request and view thier loan history. This application is developed to simplify loan application and management for FirstVigeo Supermarket.
