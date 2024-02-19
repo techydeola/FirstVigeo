@@ -39,6 +39,7 @@
 2. Go to your browser (I recommend chrome), in the address bar enter ```localhost:8000\admin```
 3. Login as an admin
 4. Navigate to the staff menu and create a new staff, select only active for the staff permission (for regular staffs)
+5. Go to the Loan model and create the 3 statuses
 
 
 <p>Follow these steps for a quick example on how to use the web application (Client/Staff Side)</p>
@@ -48,6 +49,8 @@
 3. Login
 4. Request for a new loan
 
+
+![Loan page image sample](https://drive.google.com/file/d/1vo1b2aN-yy0AfvfXfvDCvKuuqEzgaJOL/view?usp=share_link)
 
 
 ### Collaboration

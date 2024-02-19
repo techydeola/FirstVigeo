@@ -14,7 +14,6 @@ class Staff(AbstractUser):
     ], max_length=100)
 
     class Meta:
-        verbose_name = "Staff"
         verbose_name_plural = "Staffs"
     
     # customising the string representation of an object for the Staff model
@@ -30,6 +29,9 @@ class Status(models.Model):
         ('pending', 'Pending'),
     )
     status = models.CharField(max_length=20, null=True, choices=LOAN_STATUS_CHOICES)
+
+    class Meta:
+        verbose_name_plural = 'Status'
 
     # customising the string representation of an object for the Status model
     def __str__(self):
