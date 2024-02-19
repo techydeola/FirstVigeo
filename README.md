@@ -19,7 +19,7 @@
 ## Getting Started
 1. Clone the repository using the command ```git clone https://github.com/techydeola/FirstVigeo```
 2. To install django web framework, run ```pip3 install django``` if pip is already installed, otherwise run ```sudo apt install python3-pip```. Note: This command only works for Ubuntu users. If you use Windows or MacOS, search google on how to install these libraries.
-3. To start the web server, navigate to the project root directory and run ```python3 manage.py runserver``` to start the development server.
+3. To start the development server, navigate to the project root directory and run ```python3 manage.py runserver```.
 
 ## Installing
 <p>This application runs on sqlite3 database, follow these instructions to get the database up and running</p>
