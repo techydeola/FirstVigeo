@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, RequestForm
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Loan
 

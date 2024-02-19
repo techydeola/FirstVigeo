@@ -1,5 +1,4 @@
 from django import forms
-from .models import Loan
 
 
 # create a django form for the login page

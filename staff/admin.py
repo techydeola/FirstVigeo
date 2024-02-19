@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Staff, Loan, LoanDetail, Status
+from .models import Staff, Loan, Status
 
 # Register your models here.
 
@@ -59,5 +59,4 @@ class LoanAdmin(admin.ModelAdmin):
 
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Loan, LoanAdmin)
-# admin.site.register(LoanDetail)
 admin.site.register(Status)
